@@ -1,0 +1,70 @@
+/* Glide Ghost Effect Styles */
+
+/* The ghost cursor - active field being filled */
+.glide-ghost-active {
+  box-shadow: 0 0 0 3px rgba(188, 71, 73, 0.8) !important;
+  background-color: rgba(188, 71, 73, 0.08) !important;
+  animation: glide-ghost-glow 0.5s ease-in-out;
+  transition: all 0.2s ease;
+}
+
+@keyframes glide-ghost-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(188, 71, 73, 0.9);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(188, 71, 73, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(188, 71, 73, 0.8);
+  }
+}
+
+/* Highlight effect for field preview */
+.glide-ghost-highlight {
+  box-shadow: 0 0 0 2px rgba(106, 153, 78, 0.7) !important;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Pulse animation for ongoing operations */
+.glide-ghost-pulse {
+  animation: glide-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes glide-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(188, 71, 73, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(188, 71, 73, 0);
+  }
+}
+
+/* Smooth transitions for all form elements */
+input,
+select,
+textarea,
+button {
+  transition: box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+/* Success flash after completion */
+.glide-ghost-success {
+  animation: glide-success-flash 0.6s ease-out;
+}
+
+@keyframes glide-success-flash {
+  0% {
+    box-shadow: 0 0 0 0 rgba(106, 153, 78, 0.8);
+    background-color: rgba(106, 153, 78, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(106, 153, 78, 0.4);
+    background-color: rgba(106, 153, 78, 0.15);
+  }
+  100% {
+    box-shadow: none;
+    background-color: transparent;
+  }
+}
+

@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Glide",
+  "version": "0.2.0",
+  "description": "Fill any form with natural language - Powered by Gemini 3",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup/index.html",
+    "default_title": "Glide - Form Filler",
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "48": "assets/icons/icon-48.png",
+      "128": "assets/icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "background": {
+    "service_worker": "background/index.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content/index.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content/content.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
