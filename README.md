@@ -122,7 +122,3 @@ glide/
 - **UI:** React 18, Zustand, TypeScript
 - **AI:** Gemini 3 Flash (with Pro fallback)
 - **Build:** Vite
-
-## License
-
-MIT
